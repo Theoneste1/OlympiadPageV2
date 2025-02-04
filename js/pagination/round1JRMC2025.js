@@ -30,9 +30,10 @@ let nextEndingPoint;
 
 
 function getCode(){
-    return document.getElementById('code').value;
+    
+    let codes= document.getElementById('code').value.toString();
+    return codes
 }
-
 fetch(ROUND3GRADE)
 .then(res => res.text())
 .then(rep => {
@@ -139,7 +140,7 @@ function getCountOfPages() {
             
             for(j=0; j<length; j++){
                 // console.log(data.table.rows[j].c[6].v)
-                let compare =data.table.rows[j].c[5].v
+                let compare =data.table.rows[j].c[5].v.toString()
                 
                 
                 if(compare == getCode()){
@@ -173,7 +174,7 @@ function getCountOfPages() {
     function createPageList() {
         
         if(countOfstudents()==0){
-            document.getElementById("error").innerHTML="Wrong code, Not found!"
+            document.getElementById("error").innerHTML="Wrong code, Not found, Please check the code used from CompetitionGradingBot!"
                 // return false 
         }
         else{
