@@ -3,6 +3,10 @@
     
 <!-- Mirrored from htmldemo.hasthemes.com/educat-preview/educat/news-details by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Oct 2023 20:01:53 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -249,8 +253,9 @@
                                                 
                                                 <div id="countList"></div>
                                             </div>
+                                            <div id="resultsClasses">
                                             <div id="school" class="remove">
-                                                <p>*************************************************************</p>
+                                               
                                                School Name : <span id="schoolname"></span><br>
                                                Teacher Name : <span id="teachername"></span><br>
                                                School District : <span id="districtname"></span><br>
@@ -261,10 +266,13 @@
                                                  Kigali time</span>
                                 
                                                <p span style="text-align: center;">JRMC2025 STUDENTS RESULTS</p>
+                                               <p>*************************************************************</p>
                                            
                                             </div>
                                                  
                                             <div class="table" id="dvCustomersGrid"></div>
+                                            </div>
+                                            <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
                                             <span>
                                                 <a style="font-size: 16px; color: brown;" href="https://forms.gle/QZB8ufGTvh8shNWw5">Click here if you have any question</a>
                                             </span>
@@ -364,6 +372,8 @@
 
     </div>
 </div>
+
+
 
 <!--End of Footer Widget Area-->
             <!--Footer Area Start-->
@@ -465,6 +475,82 @@
          <!-- <script src="js/pagination/main2.js"></script>	 -->
          <script src="js/pagination/round1JRMC2025.js"></script>			
         <script src="js/main.js"></script>
+
+
+        <script>
+           function downloadPDF() {
+    // Select the entire body or specific element to convert
+    // const element = document.body; // You can also target specific elements, e.g., document.getElementById('dataTable')
+    const element=document.getElementById("resultsClasses");
+    
+    // Define PDF options
+    const options = {
+        // margin:       0.5,          // Margins in inches
+        margin: [2, 0.5, 2, 0.5],  // Balanced top and bottom margins for spacing
+        filename:    `${document.getElementById("schoolname").innerHTML} JRMC2025 RESULTS` ,  // Name of the PDF file
+        image:        { type: 'jpeg', quality: 0.98 },  // Image settings
+        // html2canvas:  { scale: 2 },  // Higher scale improves quality
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }, // PDF settings
+        html2canvas: { scale: 2, useCORS: true },
+    };
+    
+    // Convert HTML to PDF
+    html2pdf().from(element)
+    .set(options).toPdf()
+                      .get('pdf')
+                      .then(function (pdf) {
+                          const totalPages = pdf.internal.getNumberOfPages();
+                          const pageWidth = pdf.internal.pageSize.getWidth();  // Get PDF page width
+
+                          const logoUrl = `${src="img/logo/aims3.png"}`; // Replace with your logo path or URL
+
+        // Load the logo image
+        const img = new Image();
+        img.src = logoUrl;
+
+            img.onload = function () {
+                const maxLogoWidth = pageWidth * 0.5;  // 80% of the page width
+                const aspectRatio = img.width / img.height;  // Maintain aspect ratio
+
+                const logoWidth = maxLogoWidth;
+                const logoHeight = logoWidth / aspectRatio;  // Height auto-calculated
+
+
+                for (let i = 1; i <= totalPages; i++) {
+                    pdf.setPage(i);
+
+                   // Centering the logo and moving it slightly down
+                   const logoX = (pdf.internal.pageSize.getWidth() - logoWidth) / 2;
+                    const logoY = 0.5;  // Adjust this to move the logo up/down
+                    pdf.addImage(img, 'PNG', logoX, logoY, logoWidth, logoHeight);
+
+
+                     // Title positioned just below the logo
+                    const titleY = logoY + logoHeight + 0.3;  // Adjusted spacing between logo and title
+                    pdf.setFontSize(10);
+                    pdf.setTextColor(40);
+                    pdf.text('RWANDA MATHEMATICS COMPETIONS ROUND1 RESULTS', pdf.internal.pageSize.getWidth() / 2, titleY, { align: 'center' });
+
+
+                          // Add footer with page number and date
+                        
+                              pdf.setPage(i);
+                              pdf.setFontSize(10);
+                              pdf.setTextColor(150);
+
+                              // Add custom footer text and page numbers
+                              pdf.text(`RWANDA MATHEMATICS COMPETIONS ROUND1 | Page ${i} of ${totalPages}`, 
+                                       pdf.internal.pageSize.getWidth() / 2, 
+                                       pdf.internal.pageSize.getHeight() - 0.3, 
+                                       { align: 'center' });
+                }
+                          
+                    // Save the PDF after adding the logo and footer
+                pdf.save();
+            };
+        });
+}
+        </script>
        
     </body>
 

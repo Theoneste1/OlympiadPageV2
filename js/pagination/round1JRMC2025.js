@@ -288,3 +288,8 @@ function getCountOfPages() {
         // document.getElementById("last").disabled = presentPage == countOfPages ? true : false;
         }
 
+
+
+
+        // D
+
