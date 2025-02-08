@@ -240,11 +240,14 @@
                                            
 
                                             <div style="text-align:center;">
-                                                <span id="annoucent">Wait for 1 minute before entering the code</span><br>
+                    
+                                                <marquee id="announcent" width="90%" direction="left" height="20px" scrollamount="5">
+                                                    Wait for 30 Seconds and then entter your school code!" <span class="Okay" style="font-size:10px;">✔</span>
+                                                </marquee>
                                                 <input type="text" id="code", placeholder="Enter the code here">
                                                 <br>
                                                 <br>
-                                                <input type="button" id="first" onclick="getFirstPage()" value="Show Result" />
+                                                <input type="button" id="first" disabled onclick="getFirstPage()" value="Show Result" />
                                                 <!-- <input type="button" id="next" onclick="getNextPage()" value="next" /> -->
                                                 <!--
                                                 <input type="button" id="previous" onclick="getPreviousPage()" value="previous" />
@@ -273,7 +276,8 @@
                                                  
                                             <div class="table" id="dvCustomersGrid"></div>
                                             </div>
-                                            <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+                                            <button class="download-btn" onclick="downloadPDF()">Download PDF</button><br>
+                                            <br>
                                             <span>
                                                 <a style="font-size: 16px; color: brown;" href="https://forms.gle/QZB8ufGTvh8shNWw5">Click here if you have any question</a>
                                             </span>
@@ -288,6 +292,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- <marquee id="announcent" width="90%" direction="left" height="20px" scrollamount="5">
+                    Hello Wait for 30 Seconds and then entter your school code!" <span class="Okay" style="font-size:10px;">✔</span>
+                </marquee> -->
                 <!--End of News Details Area-->
                 <!--Newsletter Area Start-->
                 <div class="newsletter-area">
@@ -551,6 +558,16 @@
             };
         });
 }
+
+
+
+        // Function to enable the button after 30 seconds (30,000 ms)
+        setTimeout(function() {
+            document.getElementById('first').disabled = false;
+            document.getElementById("announcent").innerHTML="You can now enter the school code to check the result"
+            document.getElementById("announcent").style.color="green"
+        }, 20000); // 30000 milliseconds = 30 seconds
+
         </script>
        
     </body>

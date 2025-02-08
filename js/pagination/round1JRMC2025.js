@@ -179,6 +179,7 @@ function getCountOfPages() {
         }
         else{
         // document.getElementById("dvCustomersGrid").innerHTML = "";
+        document.getElementById("announcent").innerHTML="The students who have Passed are the ones who will next round"
 
         let index;
        
