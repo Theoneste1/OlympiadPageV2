@@ -77,7 +77,7 @@ fetch(ROUND3GRADE)
    
     //function for loading pagination functionality
     function loadMyPagination() {
-    prepareList();
+    // prepareList();
     loadMyPaginationList();
     }
     window.onload = loadMyPagination;
@@ -180,6 +180,7 @@ function getCountOfPages() {
         else{
         // document.getElementById("dvCustomersGrid").innerHTML = "";
         document.getElementById("announcent").innerHTML="The students who have Passed are the ones who will next round"
+        document.getElementById("downloadButton").style.display="flex"
 
         let index;
        
