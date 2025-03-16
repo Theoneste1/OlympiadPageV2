@@ -1,7 +1,7 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 // let SHEET_TITLE = 'teachers';
-let SHEET_TITLE = 'JRMC2025ROUND1';
-let SHEET_RANGE = 'A1:Y40000'
+let SHEET_TITLE = 'JRMC2025ROUND2';
+let SHEET_RANGE = 'A1:Y9000'
 
 let ROUND3GRADE = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
 
@@ -139,7 +139,7 @@ function getCountOfPages() {
             countNumber=0
             
             for(j=0; j<length; j++){
-                // console.log(data.table.rows[j].c[6].v)
+                console.log(data.table.rows[j].c[5].v)
                 let compare =data.table.rows[j].c[5].v.toString()
                 
                 
@@ -224,13 +224,13 @@ function getCountOfPages() {
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                headerCell.innerHTML = data.table.rows[i].c[9].v;
-                // headerCell.innerHTML = 'xx';
+                // headerCell.innerHTML = data.table.rows[i].c[9].v;
+                headerCell.innerHTML = 'xx';
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                headerCell.innerHTML = data.table.rows[i].c[10].v;
-                // headerCell.innerHTML = 'Pending';
+                // headerCell.innerHTML = data.table.rows[i].c[10].v;
+                headerCell.innerHTML = 'Pending';
                 row.appendChild(headerCell);
                         }
 
