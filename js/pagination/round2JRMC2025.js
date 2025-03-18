@@ -224,13 +224,13 @@ function getCountOfPages() {
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                // headerCell.innerHTML = data.table.rows[i].c[9].v;
-                headerCell.innerHTML = 'xx';
+                headerCell.innerHTML = data.table.rows[i].c[9].v;
+                // headerCell.innerHTML = 'xx';
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                // headerCell.innerHTML = data.table.rows[i].c[10].v;
-                headerCell.innerHTML = 'Pending';
+                headerCell.innerHTML = data.table.rows[i].c[10].v;
+                // headerCell.innerHTML = 'Pending';
                 row.appendChild(headerCell);
                         }
 
