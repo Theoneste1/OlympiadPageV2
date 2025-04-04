@@ -303,9 +303,4 @@ function getCountOfPages() {
         }
 
 
-        //Downloading the letter
-        document.getElementById("announc2").addEventListener("click", function() {
-            setTimeout(() => {
-              alert("Murakoze! Kindly find the Parental Release Consent on your device!");
-            }, 500); // slight delay to mimic "after click"
-          });
+    
