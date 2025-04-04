@@ -122,6 +122,17 @@ function getCountOfPages() {
         loadMyPaginationList();
         document.getElementById("first").disabled;
         document.getElementById("announc").style="display:block"
+         document.getElementById("announc2").style="display:block"
+         document.getElementById("announc2").style=`
+         background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+`
     }
     //function for moving last page
     function getLastPage() {
