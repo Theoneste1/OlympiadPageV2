@@ -1,6 +1,6 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 // let SHEET_TITLE = 'teachers';
-let SHEET_TITLE = 'JSRMC';
+let SHEET_TITLE = 'CENTERS2025ROUND3';
 let SHEET_RANGE = 'A1:M1014'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
@@ -164,7 +164,7 @@ function getCountOfPages() {
         CheckListbutton=document.getElementById("first")
         CheckListbutton.addEventListener("click", function(){
             if(getCode()=="" && CheckListbutton.disabled==false){
-                document.getElementById("error").innerHTML="Enter the school code!!"
+                document.getElementById("error").innerHTML="Choose the centers!!"
                 return false
             }
             if(getCode()!="" && CheckListbutton.disabled==false){
@@ -179,7 +179,7 @@ function getCountOfPages() {
     function createPageList() {
         
         if(countOfstudents()==0){
-            document.getElementById("error").innerHTML="Wrong code, Please check from your telegram bot!"
+            document.getElementById("error").innerHTML="Something went wrong!"
                 // return false 
         }
         else{
