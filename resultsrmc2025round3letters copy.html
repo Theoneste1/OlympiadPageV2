@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rwanda Mathematics Round 3 Invitation</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 50px;
+      line-height: 1.6;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header img {
+      max-width: 120px;
+    }
+    .letter-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+    .signature {
+      margin-top: 50px;
+    }
+    .download-btn {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logo.png" alt="Rwanda Mathematics Olympiad Logo">
+    <h2>Rwanda Mathematics Olympiad</h2>
+  </div>
+
+  <div id="letter" class="letter-content"></div>
+
+  <div class="download-btn">
+    <button id="downloadBtn">Download Letter</button>
+  </div>
+
+  <script>
+    const today = new Date().toLocaleDateString();
+    const schoolName = "Dear School Administrator,";
+
+    const invitationLetter = `
+${today}
+
+${schoolName}
+
+We are honored to invite your esteemed school to participate in the Third Round of the Rwanda Mathematics Competition.
+
+The event details are as follows:
+
+- **Round:** 3
+- **Date:** [Insert Date Here]
+- **Venue:** [Insert Venue Here]
+- **Time:** [Insert Time Here]
+
+This competition is a platform for young mathematicians to demonstrate their skills, creativity, and passion for mathematics. We believe your students' participation will contribute greatly to the spirit of excellence and innovation that we are striving to cultivate.
+
+We kindly request your school to confirm participation and register eligible students by [Insert Deadline Date].  
+For registration and further inquiries, please contact us at [Insert Contact Information].
+
+We look forward to your active participation in making this event a success.
+
+Sincerely,
+
+<div class="signature">
+<strong>Rwanda Mathematics Olympiad Committee</strong>
+</div>
+`;
+
+    // Display the letter
+    document.getElementById('letter').innerHTML = invitationLetter;
+
+    // Download the letter
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      const textVersion = invitationLetter.replace(/<[^>]*>/g, ''); // remove HTML tags
+      const blob = new Blob([textVersion], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Invitation_Letter.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+</body>
+</html>
