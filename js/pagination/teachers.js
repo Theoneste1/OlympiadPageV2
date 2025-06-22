@@ -1,6 +1,6 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 // let SHEET_TITLE = 'teachers';
-let SHEET_TITLE = 'TEACHERS2024';
+let SHEET_TITLE = 'TEACHERS2025';
 let SHEET_RANGE = 'A1:H650'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
