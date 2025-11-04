@@ -1,0 +1,24 @@
+{
+  "name": "olympiadpagev2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theoneste1/OlympiadPageV2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theoneste1/OlympiadPageV2/issues"
+  },
+  "homepage": "https://github.com/Theoneste1/OlympiadPageV2#readme",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
