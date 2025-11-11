@@ -169,7 +169,7 @@ function getCountOfPages() {
         })
     
    // get the number of the students
-
+console.log("Hello")
     //function for adding numbers to each page
     function createPageList() {
         
