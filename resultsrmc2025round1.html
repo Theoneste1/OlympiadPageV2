@@ -203,7 +203,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="breadcrumb-text">
-                                    <h1 class="text-center">JRMC 2025 Results</h1>
+                                    <h1 class="text-center">OLYMPIAD 2026 Results</h1>
                                     <div class="breadcrumb-bar">
                                         <ul class="breadcrumb text-center">
                                             <!-- <li><a href='index.html'>Home</a></li> -->
@@ -227,11 +227,11 @@
                                         <!-- <img src="img/details/Arun_teaching.jpg" alt="">   -->
                                         <!-- <div class="single-latest-text"> -->
                                             <p id="error"></p> 
-                                            <h3>JRMC2025 ROUND1 RESULTS</h3> 
+                                            <h3>OLYMPIAD 2026 ROUND1 RESULTS</h3> 
                                            
                                             <div class="tabledate">
                                                 <div class="single-item-comment-view">
-                                                    <span id="time"><i class="zmdi zmdi-calendar-check"></i>31 Jan 2025</span>
+                                                    <span id="time"><i class="zmdi zmdi-calendar-check"></i>31 Jan 2026</span>
                                                     <!-- <span><i class="zmdi zmdi-eye"></i>4349</span>
                                                     <span><i class="zmdi zmdi-comments"></i>679</span> -->
                                                  </div>
@@ -265,11 +265,10 @@
                                                School District : <span id="districtname"></span><br>
                                                School Sector : <span id="sectorname"></span><br>
                                                Number of students: <span id="snumber"></span><br>
-                                               <span style="color: green;">Note: The students who have "Passed" should start<br> 
-                                                being prepared for round2 which should be done <br>on 28 Feb 2025 from 9:00 AM to 11:00AM,
-                                                 Kigali time</span>
+                                               <span style="color: green;">Note: The students Grade will be available soon<br>
+                                                 </span>
                                 
-                                               <p span style="text-align: center;">JRMC2025 STUDENTS RESULTS</p>
+                                               <p span style="text-align: center;">OLYMPIAD STUDENTS RESULTS 2026 ROUND1</p>
                                                <p>*************************************************************</p>
                                            
                                             </div>
@@ -389,7 +388,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7 col-12">
-                            <span>©  2024  Rwanda  Math Olympiad <a href="index.html" target="_blank"></a></span>
+                            <span>©  2026  Rwanda  Math Olympiad <a href="index.html" target="_blank"></a></span>
                         </div>
                         <div class="col-lg-6 col-md-5 col-12">
                             <div class="column-right">
@@ -495,7 +494,7 @@
     const options = {
         // margin:       0.5,          // Margins in inches
         margin: [2, 0.5, 2, 0.5],  // Balanced top and bottom margins for spacing
-        filename:    `${document.getElementById("schoolname").innerHTML} JRMC2025 RESULTS` ,  // Name of the PDF file
+        filename:    `${document.getElementById("schoolname").innerHTML} OLMPIAD COMPETITION 2026 RESULTS` ,  // Name of the PDF file
         image:        { type: 'jpeg', quality: 0.98 },  // Image settings
         // html2canvas:  { scale: 2 },  // Higher scale improves quality
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }, // PDF settings
@@ -537,7 +536,7 @@
                     const titleY = logoY + logoHeight + 0.3;  // Adjusted spacing between logo and title
                     pdf.setFontSize(10);
                     pdf.setTextColor(40);
-                    pdf.text('RWANDA MATHEMATICS COMPETIONS ROUND1 RESULTS', pdf.internal.pageSize.getWidth() / 2, titleY, { align: 'center' });
+                    pdf.text('RWANDA MATHEMATICS COMPETIONS 2026 ROUND1 RESULTS', pdf.internal.pageSize.getWidth() / 2, titleY, { align: 'center' });
 
 
                           // Add footer with page number and date
@@ -547,7 +546,7 @@
                               pdf.setTextColor(150);
 
                               // Add custom footer text and page numbers
-                              pdf.text(`RWANDA MATHEMATICS COMPETIONS ROUND1 | Page ${i} of ${totalPages}`, 
+                              pdf.text(`RWANDA MATHEMATICS COMPETIONS 2026 ROUND1 | Page ${i} of ${totalPages}`, 
                                        pdf.internal.pageSize.getWidth() / 2, 
                                        pdf.internal.pageSize.getHeight() - 0.3, 
                                        { align: 'center' });

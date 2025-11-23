@@ -1,7 +1,7 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 // let SHEET_TITLE = 'teachers';
-let SHEET_TITLE = 'JRMC2025ROUND1';
-let SHEET_RANGE = 'A1:Y40000'
+let SHEET_TITLE = 'STUDENT1DISPLAY1';
+let SHEET_RANGE = 'A1:Y60000'
 
 let ROUND3GRADE = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
 
